@@ -1,5 +1,16 @@
+$pink: #FFCCBB;
+$blue_dark: #006C84;
+
 .banner-form {
-    background-color: blue;
+    background-color: $blue_dark;
     height: 100%;
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &__label {
+        color: $pink;
+    }
 }
