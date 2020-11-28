@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import BannerForm from '../BannerForm/BannerForm';
+import Preview from '../Preview/Preview';
 
 import './App.scss';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>My React App!</h1>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <div className="banner-maker">
+            <BannerForm />
+            <Preview />
+        </div>
+    );
+};
 
 export default App;

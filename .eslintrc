@@ -1,21 +1,57 @@
 {
     "extends": [
-      "plugin:react/recommended"
+        "plugin:react/recommended",
+        "eslint:recommended",
+        "prettier"
     ],
+    "plugins": ["react", "prettier"],
     "ignorePatterns": ["webpack.config.js"],
     "env": {
-      "node": true,
-      "es6": true,
-      "browser": true
+        "node": true,
+        "es6": true,
+        "browser": true
     },
     "parserOptions": {
-      "ecmaVersion": 6,
-      "ecmaFeatures": {
-          "jsx": true
-      }
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        }
     },
     "parser": "babel-eslint",
     "rules": {
-        "quotes": [2, "single"]
+        "prettier/prettier": "warn",
+        "no-var": "error",
+        "prefer-const": "warn",
+        "quotes": [2, "single"],
+        "no-multiple-empty-lines": "warn",
+        "eol-last": "warn",
+        "semi": "warn",
+        "no-multi-spaces": "warn",
+        "no-tabs": 0,
+        "no-use-before-define": ["error",{ "functions": false, "variables": false }],
+        "no-console": 1,
+        "react/forbid-prop-types": "error",
+        "react/no-multi-comp": [ "error", { "ignoreStateless": true }],
+        "react/no-string-refs": "warn",
+        "react/prefer-es6-class": "warn",
+        "react/prefer-stateless-function": "warn",
+        "react/require-extension": "off",
+        "react/require-render-return": "warn",
+        "react/self-closing-comp": "warn",
+        "react/sort-comp": "warn",
+        "react/wrap-multilines": "off",
+        // JSX
+        "react/jsx-boolean-value": "error",
+        "react/jsx-closing-bracket-location": "error",
+        "react/jsx-curly-spacing": [ "error", "always" ],
+        "react/jsx-equals-spacing": "error",
+        "react/jsx-first-prop-new-line": "error",
+        "react/jsx-handler-names": "error",
+        "react/jsx-indent-props": [ "error", 2 ],
+        "react/jsx-key": "error",
+        "react/jsx-max-props-per-line": [ "error", { "maximum": 3 }],
+        "react/jsx-no-bind": "error",
+        "react/jsx-no-target-blank": "error",
+        "react/jsx-space-before-closing": "error"
     }
 }
