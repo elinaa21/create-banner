@@ -1,6 +1,7 @@
 $pink: #FFCCBB;
 $blue_dark: #006C84;
 $blue: #6EB5C0;
+$white: #fafafb;
 
 .banner-form {
     background-color: $blue_dark;
@@ -24,6 +25,12 @@ $blue: #6EB5C0;
         height: 30px;
         padding: 2px 10px;
         font-size: 20px;
+        background-color: $white;
+        color: $blue_dark;
+
+        &::placeholder {
+            color: rgb(180, 180, 180);
+        }
     }
 }
 
