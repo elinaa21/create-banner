@@ -40,18 +40,27 @@
         "react/self-closing-comp": "warn",
         "react/sort-comp": "warn",
         "react/wrap-multilines": "off",
+        "no-unused-vars": "warn",
         // JSX
         "react/jsx-boolean-value": "error",
         "react/jsx-closing-bracket-location": "error",
-        "react/jsx-curly-spacing": [ "error", "always" ],
+        "key-spacing": ["error", { "beforeColon": false, "afterColon": true}],
+        "react/jsx-curly-spacing": ["warn", {
+            "when": "never",
+            "children": {
+                "when": "always"
+            }
+        }],
         "react/jsx-equals-spacing": "error",
         "react/jsx-first-prop-new-line": "error",
         "react/jsx-handler-names": "error",
-        "react/jsx-indent-props": [ "error", 2 ],
+        "react/jsx-indent-props": [ "warn", 4 ],
         "react/jsx-key": "error",
-        "react/jsx-max-props-per-line": [ "error", { "maximum": 3 }],
-        "react/jsx-no-bind": "error",
         "react/jsx-no-target-blank": "error",
-        "react/jsx-space-before-closing": "error"
+        "react/jsx-max-props-per-line": [1,
+            {
+                "maximum": 3
+            }
+        ]
     }
 }

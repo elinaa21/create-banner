@@ -1,6 +1,14 @@
-$white: #E2E8E4;
+$white: #fafafb;
 
-.preview {
-    background-color: white;
+.preview-zone {
+    background-color: $white;
     width: 70%;
+    height: 100%;
+}
+
+.banner-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
 }
