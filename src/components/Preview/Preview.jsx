@@ -5,9 +5,9 @@ import './Preview.scss';
 
 const Preview = () => {
     return (
-        <div className="preview">
+        <div className="preview-zone">
             <PreviewHeader />
-            <div>mmmdmmmmmfmmfmfmffmfmmmfmfmfmfmmfmfmmfm</div>
+            <div className="banner-preview">mmmdmmmmmfmmfmfmffmfmmmfmfmfmfmmfmfmmfm</div>
         </div>
     );
 };

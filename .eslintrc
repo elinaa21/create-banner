@@ -40,6 +40,7 @@
         "react/self-closing-comp": "warn",
         "react/sort-comp": "warn",
         "react/wrap-multilines": "off",
+        "no-unused-vars": "warn",
         // JSX
         "react/jsx-boolean-value": "error",
         "react/jsx-closing-bracket-location": "error",

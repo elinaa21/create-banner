@@ -1,48 +1,31 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setShape } from '../../state/actions';
+import { setColor } from '../../state/actions';
+import ChooseShape from '../ChooseShape/ChooseShape';
 import './BannerForm.scss';
 
 const BannerForm = () => {
     const dispatch = useDispatch();
-    const shape = useSelector(state => state.banner.shape);
+    const color = useSelector(state => state.banner.color);
 
-    const setVerticalShape = () => {
-        dispatch(setShape('vertical'));
+    const setMainColor = e => {
+        dispatch(setColor(e.target.value));
     };
-    const setGorizontalShape = () => {
-        dispatch(setShape('gorizontal'));
-    };
-    const setSquareShape = () => {
-        dispatch(setShape('square'));
-    };
+    // const setGradient = e => {
+    //     dispatch(setColor(e.currentTarget.value));
+    // };
 
     return (
         <div className="banner-form">
-            <div className="banner-form__label">Shape</div>
-            <div className="shapes-container">
-                <div
-                    className={`shapes-container__shape-square ${
-                        shape === 'square' ? 'shapes-container__shape_selected' : ''
-                    }`}
-                    onClick={setSquareShape}
-                />
-                <div
-                    className={`shapes-container__shape-vertical ${
-                        shape === 'vertical' ? 'shapes-container__shape_selected' : ''
-                    }`}
-                    onClick={setVerticalShape}
-                />
-                <div
-                    className={`shapes-container__shape-gorizontal ${
-                        shape === 'gorizontal' ? 'shapes-container__shape_selected' : ''
-                    }`}
-                    onClick={setGorizontalShape}
-                />
-            </div>
+            <ChooseShape />
             <div className="banner-form__label">Background color</div>
-            <input className="banner-form__input" placeholder="Main color (#FFFFFF)" />
+            <input
+                className="banner-form__input"
+                placeholder="Main color (#FFFFFF)"
+                onChange={setMainColor}
+                value={color}
+            />
             <input className="banner-form__input" placeholder="Extra color (#FFFFFF)" />
             <div className="banner-form__label">Text</div>
             <input className="banner-form__input" />
