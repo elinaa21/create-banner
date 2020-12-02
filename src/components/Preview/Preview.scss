@@ -6,9 +6,27 @@ $white: #fafafb;
     height: 100%;
 }
 
-.banner-preview {
+.banner-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90%;
+}
+
+.banner {
+    &_square {
+        width: 45vw;
+        height: 45vw;
+        padding-bottom: 50%;
+    }
+
+    &_vertical {
+        width: 35vw;
+        height: 45vw;
+    }
+
+    &_gorizontal {
+        width: 45vw;
+        height: 35vw;
+    }
 }

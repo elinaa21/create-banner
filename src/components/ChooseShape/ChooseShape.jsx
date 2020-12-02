@@ -4,19 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setShape } from '../../state/actions';
 import './ChooseShape.scss';
 
-const Preview = () => {
+const ChooseShape = () => {
     const dispatch = useDispatch();
     const shape = useSelector(state => state.banner.shape);
 
     const setVerticalShape = () => {
         dispatch(setShape('vertical'));
     };
+
     const setGorizontalShape = () => {
         dispatch(setShape('gorizontal'));
     };
+
     const setSquareShape = () => {
         dispatch(setShape('square'));
     };
+
     return (
         <>
             <div className="banner-form__label">Shape</div>
@@ -44,4 +47,4 @@ const Preview = () => {
     );
 };
 
-export default Preview;
+export default ChooseShape;

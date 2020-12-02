@@ -19,19 +19,19 @@ const BannerForm = () => {
     return (
         <div className="banner-form">
             <ChooseShape />
-            <div className="banner-form__label">Background color</div>
+            <div className="banner-form__label">Background color (css)</div>
             <input
                 className="banner-form__input"
-                placeholder="Main color (#FFFFFF)"
+                placeholder="Main color"
                 onChange={setMainColor}
                 value={color}
             />
-            <input className="banner-form__input" placeholder="Extra color (#FFFFFF)" />
+            <input className="banner-form__input" placeholder="Extra color" />
             <div className="banner-form__label">Text</div>
             <input className="banner-form__input" />
             <input className="banner-form__input" />
             <input className="banner-form__input" />
-            <div className="banner-form__label">Text color</div>
+            <div className="banner-form__label">Text color (css)</div>
             <input className="banner-form__input" placeholder="#000000" />
         </div>
     );
