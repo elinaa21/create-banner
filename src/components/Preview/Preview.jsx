@@ -12,7 +12,7 @@ const Preview = () => {
         <div className="preview-zone">
             <PreviewHeader />
             <div className="banner-container">
-                <div className={`banner_${shape}`} style={{ backgroundColor: color }}>
+                <div className={`banner_${shape}`} style={{ background: color }}>
                     {/* <div></div> */}
                 </div>
             </div>

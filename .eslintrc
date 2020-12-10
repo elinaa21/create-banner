@@ -45,12 +45,6 @@
         "react/jsx-boolean-value": "error",
         "react/jsx-closing-bracket-location": "error",
         "key-spacing": ["error", { "beforeColon": false, "afterColon": true}],
-        "react/jsx-curly-spacing": ["warn", {
-            "when": "never",
-            "children": {
-                "when": "always"
-            }
-        }],
         "react/jsx-equals-spacing": "error",
         "react/jsx-first-prop-new-line": "error",
         "react/jsx-handler-names": "error",
