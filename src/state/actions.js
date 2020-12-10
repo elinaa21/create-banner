@@ -9,3 +9,8 @@ export const setColor = color => ({
     type: actionTypes.SET_COLOR,
     payload: { color }
 });
+
+export const setFirstLine = firstLine => ({
+    type: actionTypes.setFirstLine,
+    payload: { firstLine }
+});

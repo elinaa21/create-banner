@@ -1,11 +1,15 @@
 export const actionTypes = {
     SET_SHAPE: 'SET_SHAPE',
-    SET_COLOR: 'SET_COLOR'
+    SET_COLOR: 'SET_COLOR',
+    SET_FIRST_LINE: 'SET_FIRST_LINE'
 };
 
 const initialState = {
     shape: [],
-    color: ''
+    color: '',
+    firstLine: '',
+    secondLine: '',
+    thirdLine: ''
 };
 
 export const bannerReducer = (state = initialState, action) => {
@@ -20,6 +24,12 @@ export const bannerReducer = (state = initialState, action) => {
             return {
                 ...state,
                 color: action.payload.color
+            };
+
+        case actionTypes.SET_FIRST_LINE:
+            return {
+                ...state,
+                firstLine: action.payload.firstLine
             };
 
         default:
