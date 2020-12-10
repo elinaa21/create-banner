@@ -5,7 +5,7 @@ export const actionTypes = {
 };
 
 const initialState = {
-    shape: [],
+    shape: 'square',
     color: '',
     firstLine: '',
     secondLine: '',

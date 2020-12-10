@@ -1,0 +1,19 @@
+$blue_dark: #006C84;
+$white: #fafafb;
+
+.set-text__input {
+    width: 80%;
+    margin: 5px 0;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    padding: 2px 10px;
+    font-size: 20px;
+    background-color: $white;
+    color: $blue_dark;
+
+    &::placeholder {
+        color: rgb(180, 180, 180);
+    }
+}

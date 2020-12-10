@@ -11,6 +11,6 @@ export const setColor = color => ({
 });
 
 export const setFirstLine = firstLine => ({
-    type: actionTypes.setFirstLine,
+    type: actionTypes.SET_FIRST_LINE,
     payload: { firstLine }
 });
