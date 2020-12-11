@@ -13,20 +13,35 @@ $white: #fafafb;
     height: 90%;
 }
 
+@mixin bannerText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .banner {
     &_square {
         width: 45vw;
         height: 45vw;
-        padding-bottom: 50%;
+        @include bannerText();
     }
 
     &_vertical {
         width: 35vw;
         height: 45vw;
+        @include bannerText();
     }
 
     &_gorizontal {
         width: 45vw;
         height: 35vw;
+        @include bannerText();
+    }
+
+    &__first-line {
+        max-width: 100%;
+        width: max-content;
+        white-space: nowrap;
     }
 }
