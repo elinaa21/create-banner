@@ -39,7 +39,7 @@ $white: #fafafb;
         @include bannerText();
     }
 
-    &__first-line {
+    &__text {
         max-width: 100%;
         width: max-content;
         white-space: nowrap;
