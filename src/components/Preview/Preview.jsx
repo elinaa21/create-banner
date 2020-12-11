@@ -7,6 +7,7 @@ import './Preview.scss';
 const Preview = () => {
     const shape = useSelector(state => state.banner.shape);
     const color = useSelector(state => state.banner.color);
+    const textColor = useSelector(state => state.banner.textColor);
     const firstLineText = useSelector(state => state.banner.firstLine);
     const firstFontSize = firstLineText.length > 20 ? 900 / firstLineText.length : 45;
     const secondLineText = useSelector(state => state.banner.secondLine);
@@ -18,7 +19,7 @@ const Preview = () => {
         <div className="preview-zone">
             <PreviewHeader />
             <div className="banner-container">
-                <div className={`banner_${shape}`} style={{ background: color }}>
+                <div className={`banner_${shape}`} style={{ background: color, color: textColor }}>
                     <div className="banner__text" style={{ fontSize: firstFontSize }}>
                         {firstLineText}
                     </div>

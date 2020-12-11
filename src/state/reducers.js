@@ -3,7 +3,8 @@ export const actionTypes = {
     SET_COLOR: 'SET_COLOR',
     SET_FIRST_LINE: 'SET_FIRST_LINE',
     SET_SECOND_LINE: 'SET_SECOND_LINE',
-    SET_THIRD_LINE: 'SET_THIRD_LINE'
+    SET_THIRD_LINE: 'SET_THIRD_LINE',
+    SET_TEXT_COLOR: 'SET_TEXT_COLOR'
 };
 
 const initialState = {
@@ -11,7 +12,8 @@ const initialState = {
     color: '',
     firstLine: '',
     secondLine: '',
-    thirdLine: ''
+    thirdLine: '',
+    textColor: '#000000'
 };
 
 export const bannerReducer = (state = initialState, action) => {
@@ -44,6 +46,12 @@ export const bannerReducer = (state = initialState, action) => {
             return {
                 ...state,
                 thirdLine: action.payload.thirdLine
+            };
+
+        case actionTypes.SET_TEXT_COLOR:
+            return {
+                ...state,
+                textColor: action.payload.color
             };
 
         default:

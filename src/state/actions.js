@@ -24,3 +24,8 @@ export const setThirdLine = thirdLine => ({
     type: actionTypes.SET_THIRD_LINE,
     payload: { thirdLine }
 });
+
+export const setTextColor = color => ({
+    type: actionTypes.SET_TEXT_COLOR,
+    payload: { color }
+});
