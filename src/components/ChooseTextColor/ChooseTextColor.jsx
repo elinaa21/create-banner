@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setTextColor } from '../../state/actions';
-import './ChooseTextColor.scss';
 
 const ChooseTextColor = () => {
     const dispatch = useDispatch();
@@ -13,7 +12,7 @@ const ChooseTextColor = () => {
 
     return (
         <>
-            <div className="banner-form__label">Text color (css)</div>
+            <div className="banner-form__label">Text color</div>
             <label className="color-selector">
                 <span className="color-selector__circle" style={{ background: textColor }} />
                 <span className="color-selector__span">{textColor}</span>

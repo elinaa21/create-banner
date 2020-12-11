@@ -29,3 +29,8 @@ export const setTextColor = color => ({
     type: actionTypes.SET_TEXT_COLOR,
     payload: { color }
 });
+
+export const setImageURI = URI => ({
+    type: actionTypes.SET_IMAGE_URI,
+    payload: { URI }
+});

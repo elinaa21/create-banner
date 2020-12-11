@@ -1,0 +1,23 @@
+$blue: #6EB5C0;
+$white: #fafafb;
+
+#file_input {
+    display: none;
+}
+
+.set-image-container {
+    width: 80%;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-button {
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+        color: $blue;
+    }
+}

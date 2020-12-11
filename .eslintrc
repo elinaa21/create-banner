@@ -50,11 +50,6 @@
         "react/jsx-handler-names": "error",
         "react/jsx-indent-props": [ "warn", 4 ],
         "react/jsx-key": "error",
-        "react/jsx-no-target-blank": "error",
-        "react/jsx-max-props-per-line": [1,
-            {
-                "maximum": 3
-            }
-        ]
+        "react/jsx-no-target-blank": "error"
     }
 }

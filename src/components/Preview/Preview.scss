@@ -21,6 +21,8 @@ $white: #fafafb;
 }
 
 .banner {
+    background-size: cover;
+    
     &_square {
         width: 45vw;
         height: 45vw;
