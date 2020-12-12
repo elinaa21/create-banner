@@ -34,3 +34,8 @@ export const setImageURI = URI => ({
     type: actionTypes.SET_IMAGE_URI,
     payload: { URI }
 });
+
+export const setBannerHTML = bannerHTML => ({
+    type: actionTypes.SET_BANNER_HTML,
+    payload: { bannerHTML }
+});

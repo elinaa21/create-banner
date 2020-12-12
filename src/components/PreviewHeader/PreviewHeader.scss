@@ -8,6 +8,7 @@ $blue_dark: #006C84;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
 
     &__button {
         background-color: $pink;
@@ -19,5 +20,31 @@ $blue_dark: #006C84;
         height: 30px;
         cursor: pointer;
         outline: none;
+    }
+
+    &__copied {
+        position: absolute;
+        width: 20%;
+        height: 44px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background: $blue_dark;
+        color: $pink;
+        top: 10px;
+        left: 10px;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            border-left: 10px solid $blue_dark;
+            border-right: 10px solid transparent;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
     }
 }
