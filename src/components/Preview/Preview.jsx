@@ -49,7 +49,7 @@ const Preview = () => {
 
     async function openLink() {
         const bannerURI = await createURI();
-        const img = '<img src=\'' + bannerURI + '\'></img>';
+        const img = `<img src=${bannerURI}></img>`;
         const link = window.open('', 'DescriptiveWindowName');
         link.document.open();
         link.document.write(img);
