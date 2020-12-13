@@ -19,7 +19,7 @@ const initialState = {
     textColor: '#000000',
     imageURI: '',
     bannerHTML: null,
-    bannerJSON: ''
+    bannerJSON: '',
 };
 
 export const bannerReducer = (state = initialState, action) => {

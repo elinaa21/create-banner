@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import html2canvas from 'html2canvas';
 
 import { delayCallingFunction } from '../../modules/copyToClipboard';
+import { createURI } from '../../modules/createURI';
 import './PreviewHeader.scss';
 
 const PreviewHeader = () => {
     const bannerHTML = useSelector(state => state.banner.bannerHTML);
     const bannerJSON = useSelector(state => state.banner.bannerJSON);
+    // const bannerURI = useSelector(state => state.banner.bannerURI);
     const [isCopied, setIsCopied] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -38,12 +39,15 @@ const PreviewHeader = () => {
         delayCopying(bannerHTML);
     };
 
-    const saveAsPNG = () => {
-        html2canvas(document.getElementById('banner')).then(canvas => {
-            const img = canvas.toDataURL('image/png');
-            console.log(img);
-        });
-    };
+    async function saveAsPNG() {
+        const bannerURI = await createURI();
+        const link = document.createElement('a');
+        link.href = bannerURI;
+        link.download = 'banner_by_elina';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 
     return (
         <div className="preview-header">

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { createURI } from '../../modules/createURI';
 import { setBannerHTML, setBannerJSON } from '../../state/actions';
 import PreviewHeader from '../PreviewHeader/PreviewHeader';
 
@@ -45,18 +47,28 @@ const Preview = () => {
               background: color
           };
 
+    async function openLink() {
+        const bannerURI = await createURI();
+        const img = '<img src=\'' + bannerURI + '\'></img>';
+        const link = window.open('', 'DescriptiveWindowName');
+        link.document.open();
+        link.document.write(img);
+        link.document.close();
+    }
+
     return (
         <div className="preview-zone">
             <PreviewHeader />
             <div className="banner-container">
                 <div
-                    className={`banner banner_${shape}`}
+                    className={`banner_${shape}`}
                     style={{
                         color: textColor,
                         ...background
                     }}
                     ref={html}
                     id="banner"
+                    onClick={openLink}
                 >
                     <div className="banner__text" style={{ fontSize: firstFontSize }}>
                         {firstLineText}
