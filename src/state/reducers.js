@@ -6,7 +6,8 @@ export const actionTypes = {
     SET_THIRD_LINE: 'SET_THIRD_LINE',
     SET_TEXT_COLOR: 'SET_TEXT_COLOR',
     SET_IMAGE_URI: 'SET_IMAGE_URI',
-    SET_BANNER_HTML: 'SET_BANNER_HTML'
+    SET_BANNER_HTML: 'SET_BANNER_HTML',
+    SET_BANNER_JSON: 'SET_BANNER_JSON'
 };
 
 const initialState = {
@@ -17,7 +18,8 @@ const initialState = {
     thirdLine: '',
     textColor: '#000000',
     imageURI: '',
-    bannerHTML: null
+    bannerHTML: null,
+    bannerJSON: ''
 };
 
 export const bannerReducer = (state = initialState, action) => {
@@ -68,6 +70,12 @@ export const bannerReducer = (state = initialState, action) => {
             return {
                 ...state,
                 bannerHTML: action.payload.bannerHTML
+            };
+
+        case actionTypes.SET_BANNER_JSON:
+            return {
+                ...state,
+                bannerJSON: action.payload.bannerJSON
             };
 
         default:

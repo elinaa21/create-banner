@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setBannerHTML } from '../../state/actions';
+import { setBannerHTML, setBannerJSON } from '../../state/actions';
 import PreviewHeader from '../PreviewHeader/PreviewHeader';
 
 import './Preview.scss';
@@ -21,8 +21,19 @@ const Preview = () => {
     const secondFontSize = calculateFontSize(secondLineText);
     const thirdFontSize = calculateFontSize(thirdLineText);
 
+    const bannerJSON = {
+        shape,
+        color,
+        textColor,
+        imageURI,
+        firstLineText,
+        secondLineText,
+        thirdLineText
+    };
+
     useEffect(() => {
         dispatch(setBannerHTML(html.current.outerHTML));
+        dispatch(setBannerJSON(JSON.stringify(bannerJSON)));
     }, [shape, color, textColor, imageURI, firstLineText, secondLineText, thirdLineText]);
 
     const background = imageURI
@@ -45,6 +56,7 @@ const Preview = () => {
                         ...background
                     }}
                     ref={html}
+                    id="banner"
                 >
                     <div className="banner__text" style={{ fontSize: firstFontSize }}>
                         {firstLineText}

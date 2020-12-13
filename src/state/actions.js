@@ -39,3 +39,8 @@ export const setBannerHTML = bannerHTML => ({
     type: actionTypes.SET_BANNER_HTML,
     payload: { bannerHTML }
 });
+
+export const setBannerJSON = bannerJSON => ({
+    type: actionTypes.SET_BANNER_JSON,
+    payload: { bannerJSON }
+});

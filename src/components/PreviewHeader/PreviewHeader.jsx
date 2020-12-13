@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import html2canvas from 'html2canvas';
 
 import { delayCallingFunction } from '../../modules/copyToClipboard';
 import './PreviewHeader.scss';
 
 const PreviewHeader = () => {
     const bannerHTML = useSelector(state => state.banner.bannerHTML);
+    const bannerJSON = useSelector(state => state.banner.bannerJSON);
     const [isCopied, setIsCopied] = useState(false);
     const [isError, setIsError] = useState(false);
 
-    const copyToClipBoard = text => {
+    const copyToClipboard = text => {
         navigator.clipboard
             .writeText(text)
             .then(() => {
@@ -26,21 +28,30 @@ const PreviewHeader = () => {
             });
     };
 
-    const delayCopying = delayCallingFunction(copyToClipBoard);
+    const delayCopying = delayCallingFunction(copyToClipboard);
 
     const copyJSON = () => {
-        delayCopying('json');
+        delayCopying(bannerJSON);
     };
 
     const copyHTML = () => {
         delayCopying(bannerHTML);
     };
 
+    const saveAsPNG = () => {
+        html2canvas(document.getElementById('banner')).then(canvas => {
+            const img = canvas.toDataURL('image/png');
+            console.log(img);
+        });
+    };
+
     return (
         <div className="preview-header">
             {isCopied ? <div className="preview-header__copied">Copied &#10003;</div> : null}
             {isError ? <div className="preview-header__copied">Something went wrong</div> : null}
-            <button className="preview-header__button">Save as png</button>
+            <button className="preview-header__button" onClick={saveAsPNG}>
+                Save as png
+            </button>
             <button className="preview-header__button" onClick={copyHTML}>
                 Copy HTML
             </button>
